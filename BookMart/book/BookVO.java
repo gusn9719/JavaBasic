@@ -1,5 +1,7 @@
 package book;
 
+import java.util.Date;
+
 public class BookVO {
 	private int bookNo;
 	private String title;
@@ -7,19 +9,21 @@ public class BookVO {
 	private String publisher;
 	private int price;
 	private int instock;
+	private Date regdate;
 
 	public BookVO(int bookNo, String title, String author, //
-			/*  */ String publisher, int price, int instock) {
+			/*  */ String publisher, int price, int instock, Date regDate) {
 		this.bookNo = bookNo;
 		this.title = title;
 		this.author = author;
 		this.publisher = publisher;
 		this.price = price;
 		this.instock = instock;
+		this.regdate = regDate;
 	}
 
 	public BookVO(String title, String author, String publisher, int price, int instock) {
-		this(-1, title, author, publisher, price, instock);
+		this(-1, title, author, publisher, price, instock, null);
 	}
 
 	public void setBookNo(int bookNo) {
@@ -74,6 +78,12 @@ public class BookVO {
 		return bookNo;
 	}
 
+	public Date getRegdate() {
+		return regdate;
+	}
 
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
+	}
 
 }
